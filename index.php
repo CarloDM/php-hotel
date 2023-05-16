@@ -51,7 +51,7 @@ foreach ($hotels as $hotel){
   array_push($hotelsFilter,$hotel);
 }
 var_dump($flag);
-// var_dump($hotels );
+// var_dump($_POST['parking']);
 ?>
 
 <!DOCTYPE html>
@@ -64,39 +64,39 @@ var_dump($flag);
 </head>
 <body>
   <div class="main_wrapper">
+
     <form action="index.php" method="post">
       <input type="checkbox" name="parking" value="">
       <label for="parking">parking</label>
       <input type="submit">
     </form>
 
-  <div class="hotels_container">
+    <div class="hotels_container">
 
-    <?php if(!$flag){ ?>
       <!-- if ------------------ -->
-      <?php foreach ($hotels as $hotel): ?>
-        <ul class="card">
-          <?php foreach ($hotel as $key => $value ): ?>
-          <li><?php echo $key . ': ' . $value;?></li>
-          <?php endforeach; ?>
-        </ul>
-      <?php endforeach; ?>
-          
-      <!-- else -------------------- -->
-      <?php }else{ ?>
+      <?php if(!$flag){ ?>
 
-      <?php foreach ($hotelsFilter as $hotel): ?>
-        <ul class="card">
-          <?php foreach ($hotel as $key => $value ): ?>
-          <li><?php echo $key . ': ' . $value;?></li>
-          <?php endforeach; ?>
-        </ul>
-      <?php endforeach; ?>
-      <?php } ?>
+        <?php foreach ($hotels as $hotel): ?>
+          <ul class="card">
+            <?php foreach ($hotel as $key => $value ): ?>
+            <li><?php echo $key . ': ' . $value;?></li>
+            <?php endforeach; ?>
+          </ul>
+        <?php endforeach; ?>
+            
+        <!-- else -------------------- -->
+        <?php }else{ ?>
 
-    </ul>
-  </div>
+        <?php foreach ($hotelsFilter as $hotel): ?>
+          <ul class="card">
+            <?php foreach ($hotel as $key => $value ): ?>
+            <li><?php echo $key . ': ' . $value;?></li>
+            <?php endforeach; ?>
+          </ul>
+        <?php endforeach; ?>
+        <?php } ?>
 
+    </div>
   </div>
 </body>
 </html>
