@@ -85,7 +85,7 @@ var_dump($flag);
         <?php endforeach; ?>
             
         <!-- else -------------------- -->
-        <?php }else{ ?>
+      <?php }else{ ?>
 
         <?php foreach ($hotelsFilter as $hotel): ?>
           <ul class="card">
