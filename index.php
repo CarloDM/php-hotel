@@ -36,8 +36,11 @@ $hotels = [
       'distance_to_center' => 50
   ],
 ];
-// Stampare tutti i nostri hotel con tutti i dati disponibili.
-
+/*
+Stampare tutti i nostri hotel con tutti i dati disponibili.
+-------ok
+Dopo aggiungete Bootstrap e mostrate le informazioni con una tabella.
+*/
 
 ?>
 
@@ -53,15 +56,15 @@ $hotels = [
   <div class="main_wrapper">
 
   <div class="hotels_container">
-    <?php foreach ($hotels as $hotel){?>
+    <?php foreach ($hotels as $hotel): ?>
 
     <ul class="card">
-        <?php foreach ($hotel as $key => $value ){?>
+        <?php foreach ($hotel as $key => $value ): ?>
         <li><?php echo $key . ': ' . $value ?></li>
-        <?php } ?>
+        <?php endforeach ?>
     </ul>
 
-    <?php } ?>
+    <?php endforeach  ?>
   </div>
 
   </div>
