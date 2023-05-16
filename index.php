@@ -44,14 +44,14 @@ Dopo aggiungete Bootstrap e mostrate le informazioni con una tabella.
 Aggiungere un form ad inizio pagina che tramite una richiesta POST permetta di filtrare gli hotel che hanno un parcheggio.
 
 */
-$flag = false;
+$flag = ($_POST['parking'] === '') ? true : false ;
 $hotelsFilter = [] ;
 foreach ($hotels as $hotel){
   if($hotel['parking'])
   array_push($hotelsFilter,$hotel);
 }
-var_dump($hotelsFilter );
-var_dump($hotels );
+var_dump($flag);
+// var_dump($hotels );
 ?>
 
 <!DOCTYPE html>
@@ -64,10 +64,15 @@ var_dump($hotels );
 </head>
 <body>
   <div class="main_wrapper">
+    <form action="index.php" method="post">
+      <input type="checkbox" name="parking" value="">
+      <label for="parking">parking</label>
+      <input type="submit">
+    </form>
 
   <div class="hotels_container">
 
-    <?php if($flag){ ?>
+    <?php if(!$flag){ ?>
       <!-- if ------------------ -->
       <?php foreach ($hotels as $hotel): ?>
         <ul class="card">
