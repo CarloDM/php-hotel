@@ -53,7 +53,15 @@ $hotels = [
   <div class="main_wrapper">
 
   <div class="hotels_container">
-    
+    <?php 
+    foreach ($hotels as $hotel){
+    ?>
+    <span>prova:<?php var_dump($hotel)  ?> </span>
+    <?php 
+    }
+    ?>
+
+
   </div>
 
   </div>
