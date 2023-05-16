@@ -73,24 +73,24 @@ var_dump($flag);
 
     <div class="hotels_container">
 
-      <!-- if ------------------ -->
+      <!-- if tutti ------------------ -->
       <?php if(!$flag){ ?>
 
         <?php foreach ($hotels as $hotel): ?>
           <ul class="card">
             <?php foreach ($hotel as $key => $value ): ?>
-            <li><?php echo $key . ': ' . $value;?></li>
+              <li><?php echo $key . ': ' . $value;?></li>
             <?php endforeach; ?>
           </ul>
         <?php endforeach; ?>
             
-        <!-- else -------------------- -->
+        <!-- else con parcheggio -------------------- -->
       <?php }else{ ?>
 
         <?php foreach ($hotelsFilter as $hotel): ?>
           <ul class="card">
             <?php foreach ($hotel as $key => $value ): ?>
-            <li><?php echo $key . ': ' . $value;?></li>
+              <li><?php echo $key . ': ' . $value;?></li>
             <?php endforeach; ?>
           </ul>
         <?php endforeach; ?>
