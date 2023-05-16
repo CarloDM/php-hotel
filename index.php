@@ -40,8 +40,18 @@ $hotels = [
 Stampare tutti i nostri hotel con tutti i dati disponibili.
 -------ok
 Dopo aggiungete Bootstrap e mostrate le informazioni con una tabella.
-*/
 
+Aggiungere un form ad inizio pagina che tramite una richiesta POST permetta di filtrare gli hotel che hanno un parcheggio.
+
+*/
+$flag = false;
+$hotelsFilter = [] ;
+foreach ($hotels as $hotel){
+  if($hotel['parking'])
+  array_push($hotelsFilter,$hotel);
+}
+var_dump($hotelsFilter );
+var_dump($hotels );
 ?>
 
 <!DOCTYPE html>
@@ -56,15 +66,30 @@ Dopo aggiungete Bootstrap e mostrate le informazioni con una tabella.
   <div class="main_wrapper">
 
   <div class="hotels_container">
-    <?php foreach ($hotels as $hotel): ?>
 
-    <ul class="card">
-        <?php foreach ($hotel as $key => $value ): ?>
-        <li><?php echo $key . ': ' . $value ?></li>
-        <?php endforeach ?>
+    <?php if($flag){ ?>
+      <!-- if ------------------ -->
+      <?php foreach ($hotels as $hotel): ?>
+        <ul class="card">
+          <?php foreach ($hotel as $key => $value ): ?>
+          <li><?php echo $key . ': ' . $value;?></li>
+          <?php endforeach; ?>
+        </ul>
+      <?php endforeach; ?>
+          
+      <!-- else -------------------- -->
+      <?php }else{ ?>
+
+      <?php foreach ($hotelsFilter as $hotel): ?>
+        <ul class="card">
+          <?php foreach ($hotel as $key => $value ): ?>
+          <li><?php echo $key . ': ' . $value;?></li>
+          <?php endforeach; ?>
+        </ul>
+      <?php endforeach; ?>
+      <?php } ?>
+
     </ul>
-
-    <?php endforeach  ?>
   </div>
 
   </div>
