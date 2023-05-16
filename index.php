@@ -56,7 +56,7 @@ $hotels = [
     <?php 
     foreach ($hotels as $hotel){
     ?>
-    <span>prova:<?php var_dump($hotel)  ?> </span>
+    <span>prova:<?php var_dump($hotel['name'])  ?> </span>
     <?php 
     }
     ?>
