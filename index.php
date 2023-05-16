@@ -42,7 +42,7 @@ Stampare tutti i nostri hotel con tutti i dati disponibili.
 Dopo aggiungete Bootstrap e mostrate le informazioni con una tabella.
 
 Aggiungere un form ad inizio pagina che tramite una richiesta POST permetta di filtrare gli hotel che hanno un parcheggio.
-
+-------ok
 */
 $flag = ($_POST['parking'] === '') ? true : false ;
 $hotelsFilter = [] ;
@@ -53,7 +53,7 @@ foreach ($hotels as $hotel){
 var_dump($flag);
 // var_dump($_POST['parking']);
 ?>
-
+<!-- ----------------------------------------------- -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -94,8 +94,8 @@ var_dump($flag);
             <?php endforeach; ?>
           </ul>
         <?php endforeach; ?>
-        <?php } ?>
 
+      <?php } ?>
     </div>
   </div>
 </body>
